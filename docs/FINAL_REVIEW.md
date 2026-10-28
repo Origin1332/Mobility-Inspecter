@@ -2,7 +2,7 @@
 작성: 2026-10-28
 
 ## 결과 요약
-Android 앱 소스, 데이터 변환, 학습/ONNX 내보내기 도구를 작성했습니다. 로컬 수정 데이터셋 변환 및 Python 테스트 4개가 통과했습니다. 학습 완료 모델과 실제 태블릿 동작은 아직 확인되지 않았습니다. APK/Android 테스트는 GitHub CI에서 별도로 확인합니다.
+Android 앱 소스, 데이터 변환, 학습/ONNX 내보내기 도구를 작성했습니다. 로컬 수정 데이터셋 변환 및 Python 테스트 4개가 통과했습니다. 학습 완료 모델과 실제 태블릿 동작은 아직 확인되지 않았습니다. GitHub CI에서 Android 단위 테스트·lint·APK 빌드가 통과했습니다.
 
 ## 기술 스택
 | 영역 | 선택 |
@@ -57,3 +57,11 @@ JDK/Gradle/Android SDK가 확인되지 않아 로컬 APK 빌드와 Kotlin 테스
 - 실제 차량에서 박스/선택 위치, 한국어 표시, 색상과 회전 확인.
 - 10분 연속 실행 후 FPS/처리 지연/메모리/발열 측정.
 - 추가 차량으로 클래스별 precision/recall/mAP 평가. 학습 예시 0개인 3종 보완.
+
+## 최종 CI 확인
+- 검증 코드 커밋: fd49f084423382603e70fa3458acdd6e6a52d502
+- [GitHub Actions 실행 #3](https://github.com/Origin1332/Mobility-Inspecter/actions/runs/40667510881): success
+- Python 데이터 테스트, Android testDebugUnitTest, lintDebug, assembleDebug 통과.
+- [디버그 APK ZIP](https://github.com/Origin1332/Mobility-Inspecter/actions/runs/40667510881/artifacts/12806856866) 생성 확인.
+- 로컬 SDK 부재는 CI 빌드로 보완했습니다. 실기기 카메라/성능 시험과 실제 학습 모델 준비는 미완료입니다.
+- 첫 CI의 오래된 SDK tools 패키지 설치 실패는 필요한 SDK 플랫폼/빌드 도구 명시로 해결했습니다.

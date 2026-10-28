@@ -2,6 +2,8 @@
 Android 태블릿의 후면 카메라로 차량 전면부 부품의 바운딩 박스·부품명·신뢰도·점검 참고 정보를 표시하는 오프라인 앱입니다.
 
 ## 현재 상태
+[검증 완료 디버그 APK 다운로드](https://github.com/Origin1332/Mobility-Inspecter/actions/runs/40667510881/artifacts/12806856866) · [빌드/테스트 결과](https://github.com/Origin1332/Mobility-Inspecter/actions/runs/40667510881)
+
 앱 소스와 데이터 변환/학습/ONNX 패키징 도구를 구현했습니다. 학습 모델은 포함되지 않습니다. 먼저 아래 절차로 사용자 로컬 데이터셋을 학습하고 앱에 모델 ZIP을 가져와야 실제 탐지가 가능합니다. 학습 완료·현장 정확도·실기기 성능은 아직 검증되지 않았습니다.
 
 ## 데이터와 학습 (PC)
