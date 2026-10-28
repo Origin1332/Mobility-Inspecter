@@ -13,7 +13,7 @@ object ModelPackage {
         return File(context.filesDir,name).takeIf { it.isDirectory }
     }
     // Unique directories + atomic preference switch preserve the last valid package on failure.
-    fun import(context: Context, uri: Uri): File {
+    fun importPackage(context: Context, uri: Uri): File {
         val dir=File(context.filesDir,"model-${UUID.randomUUID()}").apply { mkdirs() }
         try {
             val seen=mutableSetOf<String>()

@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
             status.text="모델 검증 중…"
             worker.execute {
                 try {
-                    val folder=ModelPackage.import(this,uri)
+                    val folder=ModelPackage.importPackage(this,uri)
                     val next=try { Detector(folder) } catch(e: Exception) { folder.deleteRecursively(); throw e }
                     val oldFolder=ModelPackage.active(this)
                     if (!getSharedPreferences("model",0).edit().putString("active",folder.name).commit()) {
